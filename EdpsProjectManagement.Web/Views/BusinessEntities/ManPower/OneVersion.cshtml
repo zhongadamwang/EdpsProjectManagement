@@ -1,20 +1,0 @@
-@model EdpsProjectManagement.Web.Models.BusinessEntities.ManPowerModel
-@{    ViewBag.Title = "Details";    Layout  = "~/Views/Shared/_Layout.cshtml";}<div class="panel panel-default">    <div class="panel-body">        <div class="row">            <div class="col-md-6">	            <div class="form-group">                    <label class="col-md-4 from-title">Name</label>                    <div class="col-md-8 from-cont">@Html.DisplayFor(model => model.Name)</div>                </div>                <div class="form-group">                    <label class="col-md-4 from-title">Description</label>                    <div class="col-md-8 from-cont">@Html.DisplayFor(model => model.Description)</div>                </div>                 <div class="form-group">
-	<label class="col-md-4 from-title">AvailableHours</label>
-	                 <div class="col-md-8 from-cont">
-		                 @Html.DisplayFor(model => model.AvailableHours)
-	                 </div>
-                 </div>
-                 <div class="form-group">
-	<label class="col-md-4 from-title">EndDate</label>
-	                 <div class="col-md-8 from-cont">
-		                 @(this.Model.EndDate == DateTime.MinValue ? String.Empty : this.Model.EndDate.ToShortDateString())
-	                 </div>
-                 </div>
-                 <div class="form-group">
-	<label class="col-md-4 from-title">StartDate</label>
-	                 <div class="col-md-8 from-cont">
-		                 @(this.Model.StartDate == DateTime.MinValue ? String.Empty : this.Model.StartDate.ToShortDateString())
-	                 </div>
-                 </div>
-                 <div class="form-group">                     <label class="col-md-4 from-title" >Version</label>                     <div class="col-md-8 from-cont">                         @Html.DisplayFor(modelItem => modelItem.Version)                     </div>                 </div>                 <div class="form-group">                     <label class="col-md-4 from-title" >Modified User Name</label>                     <div class="col-md-8 from-cont">                         @Html.DisplayFor(modelItem => modelItem.ModifiedUserName)                     </div>                 </div>                 <div class="form-group">                     <label class="col-md-4 from-title" >Modified DateTime</label>                     <div class="col-md-8 from-cont">                         @Html.DisplayFor(modelItem => modelItem.ModifiedDateTime)                     </div>                 </div>                 <div class="form-group">                     <label class="col-md-4 from-title" >Operation Type</label>                     <div class="col-md-8 from-cont">                         @Html.DisplayFor(modelItem => modelItem.OperationType)                     </div>                 </div>                 <div class="form-group">                     <label class="col-md-4 from-title" >Effective Start DateTime</label>                     <div class="col-md-8 from-cont">                         @Html.DisplayFor(modelItem => modelItem.EffectiveStartDateTime)                     </div>                 </div>                 <div class="form-group">                     <label class="col-md-4 from-title" >Effective End DateTime</label>                     <div class="col-md-8 from-cont">                         @Html.DisplayFor(modelItem => modelItem.EffectiveEndDateTime)                     </div>                 </div>             </div>        </div>    </div>    <div class="width_100 text-center m_left">        @Html.ActionLink("Back to List", "ViewHistories",new{id=this.Model.Id},new { @class="m_btn m_back"})    </div></div>
