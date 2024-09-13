@@ -1,0 +1,53 @@
+@using MetaShare.Common.Core.Presentation
+@using EdpsProjectManagement.Entities
+@using EdpsProjectManagement.Web.HtmlExtensions
+@using EdpsProjectManagement.Web.Models
+<!--add customized code between this region--><!--add customized code between this region-->
+@model IndexViewModel<EdpsProjectManagement.Entities.BusinessEntities.Iteration>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+		<th class="text-left">Name</th>
+		<th class="text-left">EndDate</th>
+		<th class="text-left">StartDate</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @if (Model.TargetPager != null && Model.TargetPager.Datas != null)
+            {
+                foreach (EdpsProjectManagement.Entities.BusinessEntities.Iteration item in Model.TargetPager.Datas)
+                {
+                <tr>
+			<td class="text-left">
+				@Html.DisplayFor(modelItem => item.Name)
+			</td>
+			<td class="text-left">
+				@(item.EndDate == DateTime.MinValue ? String.Empty : item.EndDate.ToShortDateString())
+			</td>
+			<td class="text-left">
+				@(item.StartDate == DateTime.MinValue ? String.Empty : item.StartDate.ToShortDateString())
+			</td>
+                    <td>
+                        @Html.ActionLink(" ", "Details", new { id = item.Id, Controller = "Iteration", area = "EdpsProjectManagement.Web.Views.BusinessEntities"}, new {@class="m_details", title="Details" })
+                        @Html.ActionLink(" ", "Edit", new { id = item.Id, Controller = "Iteration", area = "EdpsProjectManagement.Web.Views.BusinessEntities"}, new {@class="m_edit", title="Edit" })
+                        @Html.ActionLink(" ", "#", "#", "", new {href = "javascript:void(0);",@class="m_delete", title="Delete", onclick = " javascript:metaShare.basic.prototype.deleteTableColumn(this,'" + item.Id + "','" + Url.Action("Delete",new {Controller = "Iteration", area = "EdpsProjectManagement.Web.Views.BusinessEntities"}) + "'); return false; "})
+                        @Html.ActionLink(" ", "ViewHistories", new { id = item.Id, Controller = "Iteration", area = "EdpsProjectManagement.Web.Views.BusinessEntities"}, new {@class="m_history", title="Histories" })
+                    </td>
+                </tr>
+              }
+            }
+            </tbody>
+        </table>
+
+
+        <div class="UserPagerDiv text-center">
+    @{
+        object conditions = new
+        {
+            Name = Model.SearchModel != null ? Model.SearchModel.Name : "",
+        };
+    }
+        @Html.AjaxRenderPager(Model.TargetPager, "Search", "Iteration","Iteration_DataList", conditions)
+        </div>

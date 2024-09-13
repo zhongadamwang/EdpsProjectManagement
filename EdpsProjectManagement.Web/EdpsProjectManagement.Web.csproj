@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>EdpsProjectManagement.Web</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+  </ItemGroup>
+
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+
+  <ItemGroup>
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdpsProjectManagement.Daos.Interfaces\EdpsProjectManagement.Daos.Interfaces.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Services\EdpsProjectManagement.Services.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Daos\EdpsProjectManagement.Daos.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Services.Interfaces\EdpsProjectManagement.Services.Interfaces.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Entities\EdpsProjectManagement.Entities.csproj" />
+
+    <!--add customized code between this region-->
+    <!--add customized code between this region-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

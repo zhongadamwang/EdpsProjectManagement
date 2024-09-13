@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>EdpsProjectManagement.Services</RootNamespace>
+    <OutputPath>..\..\Lib</OutputPath>
+    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+
+  <ItemGroup>
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdpsProjectManagement.Daos.Interfaces\EdpsProjectManagement.Daos.Interfaces.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Services.Interfaces\EdpsProjectManagement.Services.Interfaces.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Entities\EdpsProjectManagement.Entities.csproj" />
+
+    <!--add customized code between this region-->
+    <!--add customized code between this region-->
+  </ItemGroup>
+
+</Project>

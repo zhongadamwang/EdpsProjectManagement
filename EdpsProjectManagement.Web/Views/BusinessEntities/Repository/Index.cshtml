@@ -1,0 +1,32 @@
+@using MetaShare.Common.Core.Presentation
+@using EdpsProjectManagement.Entities
+@using EdpsProjectManagement.Web.HtmlExtensions
+@using EdpsProjectManagement.Web.Models
+<!--add customized code between this region--><!--add customized code between this region-->
+@model IndexViewModel<EdpsProjectManagement.Entities.BusinessEntities.Repository>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="m_title_box">
+    <ol>
+        <li data-id="Index">
+            <a href="#">Repository</a><i class="icon-arrowright"></i>
+        </li>
+        <li data-id="Index">Index</li>
+    </ol>
+    <div class="m_title_action">
+        <a class="m_btn" href="@(this.Url.Action("Create", "Repository", null))">New</a>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Repository</div>
+    <div class="panel-body">
+            @Html.Partial(Url.Content("../BusinessEntities/Repository/_Search"), Model.SearchModel)
+    <div class="table-responsive" id="Repository_DataList">
+            @Html.Partial(Url.Content("../BusinessEntities/Repository/_DataList"), Model)
+    </div>
+    </div>
+</div>
+@this.Html.Partial("_DeleteDialog")

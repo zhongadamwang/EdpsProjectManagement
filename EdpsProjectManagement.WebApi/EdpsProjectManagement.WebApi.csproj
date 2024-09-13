@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>EdpsProjectManagement.WebApi</RootNamespace>
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\\" />
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+  </ItemGroup>
+
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdpsProjectManagement.Services.Interfaces\EdpsProjectManagement.Services.Interfaces.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Daos\EdpsProjectManagement.Daos.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Entities\EdpsProjectManagement.Entities.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Services\EdpsProjectManagement.Services.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Daos.Interfaces\EdpsProjectManagement.Daos.Interfaces.csproj" />
+
+    <!--add customized code between this region-->
+    <!--add customized code between this region-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

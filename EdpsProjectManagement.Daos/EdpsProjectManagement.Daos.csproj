@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>EdpsProjectManagement.Daos</RootNamespace>
+    <OutputPath>..\..\Lib</OutputPath>
+    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <!--add customized code between this region-->
+  <!--add customized code between this region-->
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient"  />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdpsProjectManagement.Entities\EdpsProjectManagement.Entities.csproj" />
+
+    <ProjectReference Include="..\EdpsProjectManagement.Daos.Interfaces\EdpsProjectManagement.Daos.Interfaces.csproj" />
+
+    <!--add customized code between this region-->
+    <!--add customized code between this region-->
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+@using EdpsProjectManagement.Web.HtmlExtensions
+@using EdpsProjectManagement.Entities
+
+@model List<EdpsProjectManagement.Entities.BusinessEntities.ManPower>
+@{    ViewBag.Title = "Histories";    Layout  = "~/Views/Shared/_Layout.cshtml";<!--add customized code between this region--><!--add customized code between this region-->}<div class="m_title_box">    <ol>        <li data-id="ManPower">            <a href="#">ManPower</a><i class="icon-arrowright"></i>        </li>        <li data-id="Histories">Histories</li>    </ol></div><div class="panel panel-default">        <div class="panel-heading">ManPower</div>    <div class="panel-body">    <div class="table-responsive">        <table class="table table-striped table-bordered table-hover">            <thead>            <tr>                <th class="text-left">Name</th>
+                <th class="text-left">AvailableHours</th>
+                <th class="text-left">EndDate</th>
+                <th class="text-left">StartDate</th>
+                <th class="text-right">Version</th>                <th class="text-right">Effective Start DateTime</th>                <th class="text-right">Effective End DateTime</th>                <th class="text-left">Operation Type</th>                <th>Actions</th>            </tr>            </thead>            <tbody>
+            @foreach (EdpsProjectManagement.Entities.BusinessEntities.ManPower Item in Model)
+                        {                <tr>                    <td class="text-left">                        @Html.DisplayFor(modelItem => Item.Name)                    </td>                    <td class="text-left">
+	                        @Html.DisplayFor(modelItem =>Item.AvailableHours)
+                    </td>
+                    <td class="text-left">
+	                        @(Item.EndDate == DateTime.MinValue ? String.Empty : Item.EndDate.ToShortDateString())
+                    </td>
+                    <td class="text-left">
+	                        @(Item.StartDate == DateTime.MinValue ? String.Empty : Item.StartDate.ToShortDateString())
+                    </td>
+                <td class="text-right">                    @Html.DisplayFor(modelItem => Item.Version)                </td>                <td class="text-right">                    @Html.DisplayFor(modelItem => Item.EffectiveStartDateTime)                </td>                <td class="text-right">                    @Html.DisplayFor(modelItem => Item.EffectiveEndDateTime)                </td>                <td class="text-left">                    @Html.DisplayFor(modelItem => Item.OperationType)                </td>                <td>                        @Html.ActionLink(" ", "ViewOneHistoryVersion", new { systemId = Item.SystemId, Controller = "ManPower", area = ""}, new {@class="m_details", title="Details" })
+                        </td>                </tr>            }            </tbody>        </table>    </div>    <div class="width_100 text-center m_left">        @Html.ActionLink("Back to List", "Index",null,new { @class="m_btn m_back"})    </div>    </div></div>
